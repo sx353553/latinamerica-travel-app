@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { Link } from "react-router-dom";
 import L from "leaflet";
 import destinations from "../data/destinations";
+import { fetchCityData } from "../api/geodb";
 
 const redIcon = L.icon({
   iconUrl:
@@ -17,6 +18,29 @@ const redIcon = L.icon({
   shadowSize: [41, 41],
 });
 
+const countryCodes = {
+  Brazil: "BR",
+  Argentina: "AR",
+  Colombia: "CO",
+  Chile: "CL",
+  Peru: "PE",
+  Venezuela: "VE",
+  Ecuador: "EC",
+  Guatemala: "GT",
+  Bolivia: "BO",
+  Paraguay: "PY",
+  Uruguay: "UY",
+  "Costa Rica": "CR",
+};
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function removeAccents(text) {
+  return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 function FlyToCity({ city }) {
   const map = useMap();
 
@@ -30,6 +54,45 @@ function FlyToCity({ city }) {
 }
 
 function TravelMap({ searchedCity }) {
+  const [populations, setPopulations] = useState({});
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadPopulations() {
+      for (const destination of destinations) {
+        if (cancelled) return;
+
+        try {
+          const cityData = await fetchCityData(
+            removeAccents(destination.city),
+            countryCodes[destination.country],
+          );
+
+          if (!cancelled && cityData && cityData.population) {
+            setPopulations((previous) => ({
+              ...previous,
+              [destination.id]: cityData.population,
+            }));
+          }
+        } catch (error) {
+          console.error(
+            `Could not load population for ${destination.city}:`,
+            error,
+          );
+        }
+
+        await delay(1500); // GeoDB's free plan allows about 1 request per second
+      }
+    }
+
+    loadPopulations();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <MapContainer center={[-12, -70]} zoom={3} className="map">
       <TileLayer
@@ -54,6 +117,12 @@ function TravelMap({ searchedCity }) {
               className="popup-img"
             />
             <br />
+            {populations[destination.id] && (
+              <>
+                Population: {populations[destination.id].toLocaleString()}
+                <br />
+              </>
+            )}
             <Link to={`/destinations/${destination.id}`}>View details</Link>
           </Popup>
         </Marker>
