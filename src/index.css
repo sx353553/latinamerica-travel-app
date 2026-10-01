@@ -13,3 +13,13 @@ img {
   height: 160px;
   object-fit: cover;
 }
+
+.map {
+  height: 600px;
+  width: 100%;
+}
+
+.popup-img {
+  width: 120px;
+  height: auto;
+}
