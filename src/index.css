@@ -197,7 +197,9 @@ h1 {
 .detail__img {
   display: block;
   width: 100%;
-  max-width: 700px;
+  max-width: 800px;
+  height: 420px; /* fixed height: a wide preview instead of a tall photo */
+  object-fit: cover; /* object-fit: crops to fill the box without stretching */
   margin: 16px auto 8px;
   border-radius: var(--radius);
   cursor: zoom-in; /* cursor: shows a magnifying glass on hover */
@@ -271,6 +273,13 @@ h1 {
   object-fit: cover;
   border-radius: 6px;
   margin: 6px 0;
+  /* Wikipedia description inside the search popup */
+  .popup-text {
+    font-size: 0.85rem;
+    max-width: 220px;
+    margin: 6px 0 0;
+    line-height: 1.4;
+  }
 }
 
 /* ---------- IMAGE MODAL ---------- */
@@ -296,8 +305,9 @@ h1 {
 }
 
 .modal__img {
-  max-width: 90%;
-  max-height: 85vh;
+  max-width: 96vw; /* was 92vw: uses more of the screen's width */
+  max-height: 95vh; /* was 90vh: a bit taller, which also makes tall photos wider */
+  object-fit: contain; /* object-fit: always shows the whole photo, never cropped */
   border-radius: var(--radius);
 }
 
