@@ -40,7 +40,6 @@ h1 {
 
 /* ---------- NAV ---------- */
 
-/* Class selector + Flexbox: puts the logo and links on one row, spread apart */
 .nav {
   display: flex;
   justify-content: space-between; /* pushes items to opposite ends */
@@ -54,7 +53,7 @@ h1 {
 }
 
 .nav a {
-  text-decoration: none; /* removes the underline from links */
+  text-decoration: none; 
   color: var(--text);
 }
 
@@ -301,13 +300,13 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000; /* above everything else, including the nav */
+  z-index: 2000; 
 }
 
 .modal__img {
-  max-width: 96vw; /* was 92vw: uses more of the screen's width */
-  max-height: 95vh; /* was 90vh: a bit taller, which also makes tall photos wider */
-  object-fit: contain; /* object-fit: always shows the whole photo, never cropped */
+  max-width: 96vw; 
+  max-height: 98vh; 
+  object-fit: contain; 
   border-radius: var(--radius);
 }
 
@@ -315,11 +314,20 @@ h1 {
   position: absolute;
   top: 20px;
   right: 30px;
-  font-size: 2.5rem;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
   color: white;
-  background: none;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* dark circle so the × shows over any photo */
   border: none;
+  border-radius: 50%; /* border-radius 50%: makes a perfect circle */
   cursor: pointer;
+  z-index: 1; /* keeps the button above the photo */
 }
 
 /* ---------- FOOTER ---------- */
