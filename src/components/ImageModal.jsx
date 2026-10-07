@@ -16,7 +16,7 @@ function ImageModal({ image, alt, onClose }) {
   }, [onClose]); 
   return (
     <div className="modal" onClick={onClose}>
-      <button className="modal__close" onClick={onClose}>
+      <button className="modal__close" onClick={onClose}>X
       </button>
 
       <img

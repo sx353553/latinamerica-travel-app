@@ -6,6 +6,11 @@ const destinations = [
     lat: -22.9068,
     lng: -43.1729,
     image: "/images/rio-de-janeiro.avif",
+    gallery: [
+      "/images/rio-de-janeiro-2.jpg",
+      "/images/rio-de-janeiro-3.jpg",
+      "/images/rio-de-janeiro-4.jpg",
+    ],
     description:
       "Famous for Copacabana beach, Carnival, and the Christ the Redeemer statue overlooking the city.",
   },
@@ -26,6 +31,11 @@ const destinations = [
     lat: 4.711,
     lng: -74.0721,
     image: "/images/bogota.avif",
+    gallery: [
+      "/images/bogota-2.jpg",
+      "/images/bogota-3.jpg",
+      "/images/bogota-4.jpg",
+    ],
     description:
       "Colombia's high-altitude capital, home to the Gold Museum and the colorful La Candelaria neighborhood.",
   },

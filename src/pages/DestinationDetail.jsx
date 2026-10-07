@@ -2,11 +2,11 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import destinations from "../data/destinations";
 import ImageModal from "../components/ImageModal";
+import ImageCarousel from "../components/ImageCarousel";
 
 function DestinationDetail() {
   const { id } = useParams();
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState(null);
 
   const destination = destinations.find((place) => place.id === id);
 
@@ -14,11 +14,12 @@ function DestinationDetail() {
     return (
       <section>
         <h1>Destination not found</h1>
-        {/* Link component: moves to another page without reloading */}
         <Link to="/destinations">Back to destinations</Link>
       </section>
     );
   }
+
+  const photos = [destination.image, ...(destination.gallery || [])];
 
   return (
     <section className="detail">
@@ -28,23 +29,26 @@ function DestinationDetail() {
         {destination.city}, {destination.country}
       </h1>
 
-      <img
-        className="detail__img"
-        src={destination.image}
+      <ImageCarousel
+        key={destination.id}
+        photos={photos}
         alt={destination.city}
-        // Event handler + arrow function: updating state opens the modal
-        onClick={() => setIsModalOpen(true)}
+        onPhotoClick={setModalImage}
       />
-      <p className="detail__hint">Click the photo to enlarge it.</p>
+
+      <p className="detail__hint">
+        {photos.length > 1
+          ? "Use the arrows to see more photos. Click a photo to enlarge it."
+          : "Click the photo to enlarge it."}
+      </p>
 
       <p>{destination.description}</p>
 
-      {/* Conditional rendering (&&): only show the modal when isModalOpen is true */}
-      {isModalOpen && (
+      {modalImage && (
         <ImageModal
-          image={destination.image} 
-          alt={destination.city} 
-          onClose={() => setIsModalOpen(false)} 
+          image={modalImage}
+          alt={destination.city}
+          onClose={() => setModalImage(null)}
         />
       )}
     </section>
