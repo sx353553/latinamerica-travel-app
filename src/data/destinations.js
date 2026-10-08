@@ -45,7 +45,12 @@ const destinations = [
     country: "Chile",
     lat: -33.4489,
     lng: -70.6693,
-    image: "/images/santiago.avif",
+    image: "/images/santiago.jpg",
+        gallery: [
+      "/images/santiago-2.jpg",
+      "/images/santiago-3.jpg",
+      "/images/santiago-4.jpg",
+    ],
     description:
       "Chile's capital, set in a valley with the snowcapped Andes as its backdrop.",
   },
