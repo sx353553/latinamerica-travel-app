@@ -96,6 +96,11 @@ const destinations = [
     lat: -0.9538,
     lng: -90.9656,
     image: "/images/galapagos.avif",
+    gallery: [
+      "/images/galapagos-2.jpg",
+      "/images/galapagos-3.jpg",
+      "/images/galapagos-4.jpg",
+    ],
     description:
       "Volcanic islands with unique wildlife like giant tortoises and marine iguanas, made famous by Charles Darwin.",
   },
