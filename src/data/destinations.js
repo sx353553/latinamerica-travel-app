@@ -81,6 +81,11 @@ const destinations = [
     lat: 10.4806,
     lng: -66.9036,
     image: "/images/caracas.avif",
+    gallery: [
+      "/images/caracas-2.jpg",
+      "/images/caracas-3.jpg",
+      "/images/caracas-4.jpg",
+     ],
     description:
       "Venezuela's capital, sitting in a mountain valley next to El Ávila National Park.",
   },
