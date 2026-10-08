@@ -21,6 +21,11 @@ const destinations = [
     lat: -38.0055,
     lng: -57.5426,
     image: "/images/mar-del-plata.avif",
+    gallery: [
+      "/images/mar-del-plata-2.jpg",
+      "/images/mar-del-plata-3.jpg",
+      "/images/mar-del-plata-4.jpg",
+    ],
     description:
       "Argentina's favorite beach city on the Atlantic coast, known for its seafood and lively summer season.",
   },
