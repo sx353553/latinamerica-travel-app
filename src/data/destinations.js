@@ -121,6 +121,11 @@ const destinations = [
     lat: -25.2637,
     lng: -57.5759,
     image: "/images/asuncion.avif",
+    gallery: [
+      "/images/asuncion-2.jpg",
+      "/images/asuncion-3.jpg",
+      "/images/asuncion-4.jpg",
+    ],
     description:
       "One of the oldest cities in South America, sitting on the banks of the Paraguay River.",
   },
