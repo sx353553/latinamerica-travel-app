@@ -66,6 +66,11 @@ const destinations = [
     lat: -13.1631,
     lng: -72.545,
     image: "/images/machu-picchu.avif",
+        gallery: [
+          "/images/machu-picchu-2.jpg",
+          "/images/machu-picchu-3.jpg",
+          "/images/machu-picchu-4.jpg",
+        ],
     description:
       "The 15th-century Inca citadel high in the Andes, one of the most famous archaeological sites in the world.",
   },
