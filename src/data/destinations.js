@@ -156,6 +156,12 @@ const destinations = [
     lat: -34.9627,
     lng: -54.951,
     image: "/images/punta-del-este.avif",
+    gallery: [
+      "/images/punta-del-este-2.jpg",
+      "/images/punta-del-este-3.jpg",
+      "/images/punta-del-este-4.jpg",
+      "/images/punta-del-este-5.jpg",
+    ],
     description:
       "Uruguay's upscale beach resort, known for its coastline and the famous hand sculpture on Brava Beach.",
   },
