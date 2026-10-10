@@ -111,6 +111,11 @@ const destinations = [
     lat: 14.6349,
     lng: -90.5069,
     image: "/images/guatemala-city.avif",
+    gallery: [
+      "/images/guatemala-city-2.jpg",
+      "/images/guatemala-city-3.jpg",
+      "/images/guatemala-city-4.jpg",
+    ],
     description:
       "The largest city in Central America and a gateway to Mayan ruins and volcanic landscapes.",
   },
@@ -121,6 +126,11 @@ const destinations = [
     lat: -16.4897,
     lng: -68.1193,
     image: "/images/la-paz.avif",
+    gallery: [
+      "/images/la-paz-2.jpg",
+      "/images/la-paz-3.jpg",
+      "/images/la-paz-4.jpg",
+    ],
     description:
       "One of the highest cities in the world, connected by a network of cable cars over the Andes.",
   },
