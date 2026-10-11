@@ -172,6 +172,12 @@ const destinations = [
     lat: 9.9281,
     lng: -84.0907,
     image: "/images/san-jose.avif",
+    gallery: [
+      "/images/san-jose-2.jpg",
+      "/images/san-jose-3.jpg",
+      "/images/san-jose-4.jpg",
+      "/images/san-jose-5.jpg",
+    ],
     description:
       "Costa Rica's capital in the Central Valley, a starting point for rainforests, volcanoes, and beaches.",
   },
