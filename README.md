@@ -4,7 +4,7 @@ A React web app for exploring travel destinations across Latin America. Browse 1
 
 This project is a rebuild of my Module 5 JavaScript final project, recreated from scratch in React.
 
-**Live demo:** _coming soon_
+**Live demo:** https://latinamerica-travel-app.vercel.app/
 
 ## Features
 
