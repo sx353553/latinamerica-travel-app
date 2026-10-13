@@ -13,23 +13,23 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 body {
   font-family: "Roboto", sans-serif;
-  color: var(--text); 
+  color: var(--text);
   background: var(--background);
   line-height: 1.6;
 }
 
 main > section {
   max-width: 1200px;
-  margin: 0 auto; 
+  margin: 0 auto;
   padding: 48px 24px;
 }
 
 h1 {
-  font-size: 2.2rem; 
+  font-size: 2.2rem;
   margin-bottom: 12px;
 }
 
@@ -37,17 +37,17 @@ h1 {
 
 .nav {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   padding: 16px 32px;
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   position: sticky; /* position sticky: the nav stays at the top while scrolling */
   top: 0;
   z-index: 1100;
-} 
+}
 
 .nav a {
-  text-decoration: none; 
+  text-decoration: none;
   color: var(--text);
 }
 
@@ -80,10 +80,10 @@ h1 {
 /* ---------- HOME / HERO ---------- */
 
 .hero {
-  max-width: none !important; 
-  min-height: 70vh; 
+  max-width: none !important;
+  min-height: 70vh;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -100,6 +100,53 @@ h1 {
 .hero p {
   font-size: 1.25rem;
   max-width: 700px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 12px 28px;
+  border-radius: 6px;
+  background: var(--green);
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  border: 2px solid var(--green);
+  transition: background 0.2s ease;
+}
+
+.button:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+}
+
+.button--outline {
+  background: white;
+  color: var(--green);
+}
+
+.button--outline:hover {
+  background: var(--green);
+  color: white;
+}
+
+.featured h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.featured > p {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.featured__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
 }
 
 /* ---------- DESTINATIONS ---------- */
@@ -135,9 +182,9 @@ h1 {
   position: relative;
   display: block;
   border-radius: var(--radius);
-  overflow: hidden; 
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  transition: transform 0.2s ease; 
+  transition: transform 0.2s ease;
 }
 
 .card:hover {
@@ -159,10 +206,7 @@ h1 {
   padding: 24px 16px 12px;
   color: white;
   font-size: 1.05rem;
-  background: linear-gradient(
-    transparent,
-    rgba(0, 0, 0, 0.85)
-  ); 
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
 }
 
 /* ---------- DETAIL PAGE ---------- */
@@ -320,39 +364,32 @@ h1 {
   margin: 6px 0;
 }
 
-  .popup-text {
-    font-size: 0.85rem;
-    max-width: 220px;
-    margin: 6px 0 0;
-    line-height: 1.4;
-  }
-
+.popup-text {
+  font-size: 0.85rem;
+  max-width: 220px;
+  margin: 6px 0 0;
+  line-height: 1.4;
+}
 
 /* ---------- IMAGE MODAL ---------- */
-
 
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(
-    0,
-    0,
-    0,
-    0.95
-  ); 
+  background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(
     8px
   ); /* backdrop-filter: blurs whatever is behind the overlay */
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000; 
+  z-index: 2000;
 }
 
 .modal__img {
-  max-width: 96vw; 
-  max-height: 98vh; 
-  object-fit: contain; 
+  max-width: 96vw;
+  max-height: 98vh;
+  object-fit: contain;
   border-radius: var(--radius);
 }
 
@@ -364,12 +401,12 @@ h1 {
   height: 48px;
   font-size: 2rem;
   color: white;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   border: none;
-  border-radius: 50%; 
+  border-radius: 50%;
   cursor: pointer;
   z-index: 1;
-} 
+}
 
 /* ---------- FOOTER ---------- */
 
